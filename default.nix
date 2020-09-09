@@ -1,4 +1,4 @@
-{ stdenv, lib, fetchFromGitHub, python38 }:
+{ stdenv, lib, fetchFromGitHub, python38, fzf }:
 let
   spdxVersion = "v3.10";
   spdxDataRaw = fetchFromGitHub {
@@ -9,9 +9,9 @@ let
   };
 in stdenv.mkDerivation {
   pname = "spdx-tool";
-  version = "1.0.2";
+  version = "1.0.3";
   src = ./.;
-  buildInputs = [ python38 ];
+  buildInputs = [ python38, fzf ];
   dontConfigure = true;
   dontBuild = true;
   installPhase = ''
