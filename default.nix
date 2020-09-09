@@ -9,10 +9,11 @@ let
   };
 in stdenv.mkDerivation {
   pname = "spdx-tool";
-  version = "1.0.1";
+  version = "1.0.2";
   src = ./.;
   buildInputs = [ python38 ];
-  buildPhase = "";
+  dontConfigure = true;
+  dontBuild = true;
   installPhase = ''
     mkdir -p "$out/share/spdx-tool/"
 
