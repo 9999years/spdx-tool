@@ -9,9 +9,9 @@ let
   };
 in stdenv.mkDerivation {
   pname = "spdx-tool";
-  version = "1.0.3";
+  version = "1.0.4";
   src = ./.;
-  buildInputs = [ python38, fzf ];
+  buildInputs = [ python38 fzf ];
   dontConfigure = true;
   dontBuild = true;
   installPhase = ''
