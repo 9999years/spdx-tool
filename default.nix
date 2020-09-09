@@ -1,6 +1,5 @@
-{ pkgs ? import <nixpkgs> { } }:
+{ stdenv, lib, fetchFromGitHub, python38 }:
 let
-  inherit (pkgs) stdenv lib fetchFromGitHub python38;
   spdxVersion = "v3.10";
   spdxDataRaw = fetchFromGitHub {
     owner = "spdx";
@@ -10,7 +9,7 @@ let
   };
 in stdenv.mkDerivation {
   pname = "spdx-tool";
-  version = "1.0.0";
+  version = "1.0.1";
   src = ./.;
   buildInputs = [ python38 ];
   buildPhase = "";
